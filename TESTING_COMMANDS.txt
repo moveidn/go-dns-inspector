@@ -1,0 +1,17 @@
+# Jalankan perintah berikut untuk menguji perubahan terbaru.
+# Sesuaikan domain/resolve sesuai kebutuhan.
+
+# Lookup dasar menggunakan resolver lokal.
+go run . example.com
+
+# Verifikasi domain Punycode dapat diproses.
+go run . xn--bcher-kva.ch
+
+# Gunakan resolver IPv4 tanpa menyebut port (otomatis 53).
+go run . example.com @8.8.8.8
+
+# Gunakan resolver IPv6 berbracket untuk memastikan dukungan literal IPv6.
+go run . example.com @[2001:4860:4860::8888]
+
+# Uji urutan filter kustom dan parsing argumen filter.
+go run . example.com --filters=mx,txt
